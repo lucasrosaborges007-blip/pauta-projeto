@@ -1,0 +1,14 @@
+{
+  "name": "pauta",
+  "version": "1.0.0",
+  "description": "Gerenciador de tarefas simples, feito para a atividade de deploy na Vercel.",
+  "private": true,
+  "scripts": {
+    "dev": "node scripts/serve.js",
+    "build": "node scripts/build.js",
+    "start": "node scripts/serve.js dist"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

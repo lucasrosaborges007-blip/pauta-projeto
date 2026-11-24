@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Pauta · suas tarefas do dia</title>
+  <meta name="description" content="Organize suas tarefas com prioridade e prazo. Tudo fica salvo no seu navegador.">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app">
+    <header class="topo">
+      <h1>Pauta</h1>
+      <p class="resumo" id="resumo" aria-live="polite"></p>
+    </header>
+
+    <form id="form-tarefa" class="nova" autocomplete="off">
+      <label class="campo campo-titulo">
+        <span>O que precisa ser feito?</span>
+        <input type="text" id="titulo" maxlength="120" placeholder="Ex.: entregar o trabalho de Banco de Dados" required>
+      </label>
+      <label class="campo">
+        <span>Prioridade</span>
+        <select id="prioridade">
+          <option value="alta">Alta</option>
+          <option value="media" selected>Média</option>
+          <option value="baixa">Baixa</option>
+        </select>
+      </label>
+      <label class="campo">
+        <span>Prazo</span>
+        <input type="date" id="prazo">
+      </label>
+      <button type="submit" class="botao-principal">Adicionar tarefa</button>
+    </form>
+
+    <section class="controles" aria-label="Filtros">
+      <div class="filtros" role="group" aria-label="Mostrar">
+        <button type="button" class="filtro ativo" data-filtro="todas">Todas</button>
+        <button type="button" class="filtro" data-filtro="pendentes">Pendentes</button>
+        <button type="button" class="filtro" data-filtro="concluidas">Concluídas</button>
+      </div>
+      <input type="search" id="busca" placeholder="Buscar tarefa" aria-label="Buscar tarefa">
+    </section>
+
+    <ul id="lista" class="lista"></ul>
+    <p id="vazio" class="vazio" hidden></p>
+
+    <div class="rodape-lista">
+      <button type="button" id="limpar" class="botao-discreto">Apagar tarefas concluídas</button>
+    </div>
+  </main>
+
+  <footer class="rodape">
+    <p>Desenvolvido por <strong id="autor">Seu Nome</strong> · Atividade de Deploy na Vercel</p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
